@@ -1,0 +1,49 @@
+body{
+background-color:lightblue;
+background-image:url("https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-2/bg.jpg");
+  background-size:cover;
+}
+button{
+background-color:red;
+border:2px solid black;
+}
+#header{
+background-color:red;
+margin-left:350px;
+margin-right:290px;
+border:2px solid black;
+margin-top:5px;
+color:yellow;
+}
+#headeru2{
+background-color:red;
+margin-left:350px;
+margin-right:290px;
+border:2px solid black;
+margin-top:60px;
+color:yellow;
+}
+#u1{
+background-color:yellow;
+width:300px;
+border:2px solid black;
+}
+#u2{
+background-color:yellow;
+margin-left:1100px;
+border:2px solid black;
+}
+#head1{
+background-color:red;
+border:2px solid black;
+color:yellow;
+}
+#bottom1{
+background-color:red;
+border:2px solid black;
+margin-bottom:5px;
+margin-top:50px;
+height:90px;
+color:yellow;
+}
+

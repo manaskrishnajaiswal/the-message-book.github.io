@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+THE MESSAGE BOOK...
+</title>
+<link type="text/css" rel="stylesheet" href="message.css"/>
+<link type="image/png" rel="icon" href="message.png"/>
+</head>
+
+<body>
+<div id="head1">
+<h1 style="text-align:center">LET'S MESSAGE IT.</h1>
+</div>
+<div id="header">
+<h3 id="header1" style="text-align:center">hello!</h3>
+</div>
+
+<div id="u1" style="text-align:left">
+<p id="user1" >
+USER1
+<input type="text" id="edittext1"><br><br>
+<button type="button" onclick="clickfunction()">snd msg!</button>
+</p>
+</div>
+<div id="u2" style="text-align:right">
+<p id="user2" >
+USER2
+<input type="text" id="edittext2"><br><br>
+<button type="button" onclick="clickfunction2()">snd msg!</button>
+</p>
+</div>
+
+<div id="headeru2">
+<h3 id="header2" style="text-align:center">hello!</h3>
+</div>
+<div id="bottom1">
+<p>
+Developedby:ManasKrishnaJaiswal.<br>
+Gmailid:manas5996@gmail.com.<br>
+MobileNo:09717832816.
+</p>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAr62whMNhj_NSH4bDBgu0poi-wgsyZ68c",
+    authDomain: "themessagebook-63abe.firebaseapp.com",
+    databaseURL: "https://themessagebook-63abe.firebaseio.com",
+    storageBucket: "themessagebook-63abe.appspot.com",
+    messagingSenderId: "445140118710"
+  };
+  firebase.initializeApp(config);
+
+var database=firebase.database();
+var cloud = firebase.database();
+var dbref1 = cloud.ref();
+dbref1.on('value',function(snapshot){
+var element = document.getElementById("header1");
+ element.innerHTML = snapshot.val();
+var element = document.getElementById("header2");
+ element.innerHTML = snapshot.val();
+});
+
+function clickfunction()
+{
+var edittextVAR=document.getElementById('edittext1').value;
+document.getElementById('header1').innerHTML=edittextVAR.value;
+cloud.ref().set(edittextVAR);
+}
+function clickfunction2()
+{
+var edittextVAR2=document.getElementById('edittext2').value;
+document.getElementById('header2').innerHTML=edittextVAR2.value;
+cloud.ref().set(edittextVAR2);
+}
+</script>
+
+
+
+</body>
+</html>
